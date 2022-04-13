@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            margin: 5px 10px 10px 10px;
+            background-color: white;
+        }
+
+        form {
+            width: 420px;
+            border: 1px solid white;
+            background-color: aqua;
+        }
+
+        h3 {
+            margin: 0;
+            background-color: rgb(235, 55, 31);
+            color: white;
+            text-align: center;
+        }
+
+        .text {
+            color: blue;
+            text-align: right;
+        }
+
+        #hobbit {
+            color: blue;
+        }
+
+        .color td {
+            color: orange;
+        }
+        
+        /* span {
+            color: orange
+        } */
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td colspan="4"><h3>SỞ THÍCH CỦA BẠN</h3></td>
+            </tr>
+            <tr>
+                <td class="text">Họ và tên</td>
+                <td colspan="3"><input type="text" size="22"></td>
+            </tr>
+            <tr>
+                <td class="text">Email</td>
+                <td colspan="3"><input type="text" size="14"></td>
+            </tr>
+            <tr class="color">
+                <td class="text" id="hobbit">Sở thích</td>
+                <td><input type="checkbox"><span>Thể thao</span></td>
+                <td><input type="checkbox"><span>Âm nhạc</span></td>
+                <td><input type="checkbox"><span>Đọc sách</span></td>
+            </tr>
+            <tr class="color">
+                <td></td>
+                <td><input type="checkbox"><span>Lướt web</span></td>
+                <td><input type="checkbox"><span>Chơi game</span></td>
+                <td><input type="checkbox"><span>Điện ảnh</span></td>
+            </tr>
+            <tr class="color">
+                <td></td>
+                <td colspan="3"><input type="checkbox"><span>Du lịch</span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3"><input type="submit" value="Gửi thông tin">
+                    <input type="reset" value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

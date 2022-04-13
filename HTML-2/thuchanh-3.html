@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select {
+            width: 200px;
+        }
+        
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Order Form</h2>
+        <h3>What would you like to buy?</h3>
+        <select>
+            <option value="1">A</option>
+            <option value="2">B</option>
+            <option value="3">C</option>
+        </select>
+        <h3>How many would you like to order?</h3>
+        <input type="radio" name="price">1 - $10
+        <br>
+        <input type="radio" name="price">2 - $20
+        <br>
+        <input type="radio" name="price">3 - $25
+        <h3>Name<span> *</span></h3>
+        <input type="text" placeholder="FirstName" size="20">
+        <input type="text" placeholder="LastName" size="10">
+        <h3>Email</h3>
+        <input type="text">
+        <h3>Phone Number</h3>
+        <input type="text" size="7"> -
+        <input type="text" size="7"> -
+        <input type="text" size="7">
+        <h3>Address</h3>
+        <textarea cols="40" rows="7"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
