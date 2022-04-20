@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        td {
+            width: 25%;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <!-- gọi sự kiện của thành phần html -->
+            <td onclick="displayDate()">Bài 1: Hiển thị ngày</td>
+            <td onclick="calCircle()">Bài 2: Tính thông số hình tròn</td>
+            <td onclick="calRate()">Bài 3: Tính lãi đơn</td>
+            <td onclick="sendLetter()">Bài 4: Gửi thư</td>
+        </tr>
+        <tr>
+            <td id="bai1"></td>
+            <td id="bai2"></td>
+            <td id="bai3"></td>
+            <td></td>
+        </tr>
+    </table>
+    <p id="bai4"></p>
+</body>
+<script>
+    //hàm trong JS => tìm hiểu thêm
+    function displayDate() {
+        let day = prompt("Nhập vào ngày bạn muốn hiển thị: ")
+        let month = prompt("Nhập vào tháng bạn muốn hiển thị: ")
+        let year = prompt("Nhập vào năm bạn muốn hiển thị: ")
+        document.getElementById("bai1").innerText = day + "-" + month + "-" + year
+    }
+
+    function calCircle() {
+        let r = prompt("Nhập vào bán kính hình tròn: ")
+        //**: toán tử mũ, trước ** là cơ số, sau ** là số mũ
+        let area = r ** 2 * Math.PI
+        let peri = r * 2 * Math.PI
+        //tính mũ bằng thư viện Math: Math.pow()
+        // let area = Math.pow(r, 2) * Math.PI
+        //toFixed(): làm tròn, lấy đến bao nhiêu số thập phân sau dấu phẩy
+        document.getElementById("bai2").innerHTML = "Diện tích là: " + area.toFixed(3) + "<br>Chu vi là: " + peri.toFixed(2)
+    }
+
+    function calRate() {
+        let money = +prompt("Nhập vào số tiền ban đầu: ")
+        let rate = prompt("Nhập vào lãi suất hằng năm: ")
+        let year = prompt("Nhập vào số năm gửi tiết kiệm: ")
+        let moneyLast = money + ((money * rate/100) * year)
+        document.getElementById("bai3").innerText = "Số tiền nhận được là: " + moneyLast
+    }
+
+    function sendLetter() {
+        let name = prompt("Nhập vào tên người gửi: ")
+        let address = prompt("Nhập vào địa điểm gửi: ")
+        let time = prompt("Nhập vào ngày tháng năm gửi: ")
+        document.getElementById("bai4").innerHTML = "“" + name + " thương nhớ,<br>" + 
+        "Em không biết phải nói sao để anh hiểu rằng, em nhớ anh thật nhiều. Em yêu anh đến khi trái tim này tan thành nghìn mảnh. Tất cả những gì em yêu thương, em khát khao và cần đến, chính là anh, mãi mãi về sau. Em chỉ muốn ở bên anh, và anh yêu hỡi, em sẽ trở thành người phụ nữ như anh mong muốn.<br>" +
+        "Có phải em thật tệ hại, khi cứ nghĩ đến anh thật nhiều, thật lâu và nhất là mỗi khi đêm xuống? Em hứa sẽ sẽ cố gắng triệu triệu lần hơn thế. Nhưng hơn tất cả, em chỉ mong một ngày nào đó, anh sẽ tự hào về em, như tự hào về vợ của anh, và mẹ của các con anh (ít nhất là 2 nhé, em vừa mới quyết định đấy!). Em nhớ thật nhiều cảm giác mỗi đêm anh ôm em và ru em ngủ trong vòng tay. Đêm nay, em chỉ muốn được gần bên anh… và anh biết không, trái tim em đang đau đớn đến nhường nào.<br>" +
+        "Anh yêu thương, đừng bao giờ rời xa em nữa nhé. Yêu anh rất nhiều.<br>" +
+        address + "," + time +".”"
+    }
+</script>
+</html>

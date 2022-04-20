@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name">
+    <button onclick="demoPrompt()">Click</button>
+    <p id="result"></p>
+    <p id="result1"></p>
+</body>
+<script>
+    function demoPrompt() {
+        // prompt: các giá trị nhập trong prompt đều là giá trị có kiểu string
+        // let value = parseInt(prompt("Nhập gì đó vào đây đi..."))
+        // let value1 = parseInt(prompt("Nhập gì đó vào đây đi..."))
+        // let value = +prompt("Nhập gì đó vào đây đi...")
+        // let value1 = +prompt("Nhập gì đó vào đây đi...")
+        // document.write(value + "<br>")
+        // document.write(value1 + "<br>")
+        // document.write(value + value1)
+
+        //nhập sử dụng getElementById()
+        let name = document.getElementById("name").value
+        document.write(name)
+        // alert(name)
+        // console.log(name);
+        // document.getElementById("result").innerText = "<b>" + name + "</b>"
+        // document.getElementById("result1").innerHTML = "<b>" + name + "</b>"
+    }
+</script>
+</html>
