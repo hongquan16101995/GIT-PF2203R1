@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo" class="hihi"></p>
+    <a href="" class="hihi"></a>
+</body>
+<script>
+    let p = document.querySelector("p")
+    console.log(p.attributes);
+    p.setAttribute("class", "hihi a")
+    console.log(p.getAttribute("class"))
+    console.log(p.attributes);
+</script>
+</html>

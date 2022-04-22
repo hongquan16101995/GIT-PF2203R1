@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #test {
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+        #test1 {
+            position: absolute;
+            left: 300px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="demo()">Click</button>
+    <input type="text" onchange="demo1()" oninput="demo()">
+    <button id="test" onmouseover="demo2()">HelloWorld</button>
+    <button id="test1" onmouseout="demo3()">HelloWorld1</button>
+</body>
+<script>
+   function demo() {
+       console.log("HelloWorld");
+   }
+
+   function demo1() {
+       alert("HelloWorld")
+   }
+
+   function demo2() {
+       document.getElementById("test").style.left = "500px";
+       document.getElementById("test").style.top = "500px";
+   }
+
+   function demo3() {
+       document.getElementById("test1").style.left = "600px";
+       document.getElementById("test1").style.top = "500px";
+   }
+</script>
+</html>
