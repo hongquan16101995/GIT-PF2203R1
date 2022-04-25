@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../HTML-2/ava.jpg" id="tank" alt="" style="position: relative; height: 50px; width: 50px; left: 10px; top: 10px; border: 1px solid;">
+    <div style="position: fixed; top: 500px;">
+        <button onclick="topTank()">Trên</button>
+        <button onclick="bottomTank()">Dưới</button>
+        <button onclick="leftTank()">Trái</button>
+        <button onclick="rightTank()">Phải</button>
+    </div>
+</body> 
+<script>
+    function topTank() {
+        let top = parseInt(document.getElementById("tank").style.top)
+        document.getElementById("tank").style.top = (top - 20) + "px"
+    }
+
+    function bottomTank() {
+        let top = parseInt(document.getElementById("tank").style.top)
+        document.getElementById("tank").style.top = (top + 20) + "px"
+        let left = parseInt(document.getElementById("tank").style.left)
+        document.getElementById("tank").style.left = (left + 20) + "px"
+    }
+
+    function leftTank() {
+        let left = parseInt(document.getElementById("tank").style.left)
+        document.getElementById("tank").style.left = (left - 20) + "px"
+    }
+
+    function rightTank() {
+        let left = parseInt(document.getElementById("tank").style.left)
+        document.getElementById("tank").style.left = (left + 20) + "px"
+    }
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let year = +prompt("Nhập vào năm cần kiểm tra: ")
+
+    // if (year % 4 == 0) {
+    //     if (year % 100 == 0) {
+    //         if (year % 400 == 0) {
+    //             alert(year + " là năm nhuận")
+    //         } else {
+    //             alert(year + " không là năm nhuận")
+    //         }
+    //     } else {
+    //         alert(year + " là năm nhuận")
+    //     }
+    // } else {
+    //     alert(year + " không là năm nhuận")
+    // }
+
+    if ((year % 100 == 0 && year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+        alert(year + " là năm nhuận")
+    } else {
+        alert(year + " không là năm nhuận")
+    }
+
+    function leapYear() {
+            let year = document.getElementById("inputleapYear").value;
+            if (year % 4 == 0 && year % 100 != 0) {
+                document.getElementById("outputleapYear").innerHTML = year + " là năm nhuận.";
+            } else if (year % 400 == 0) {
+                document.getElementById("outputleapYear").innerHTML = year + " là năm nhuận.";
+            } else {
+                document.getElementById("outputleapYear").innerHTML = year + " không phải là năm nhuận.";
+            }
+        }
+
+</script>
+</html>
