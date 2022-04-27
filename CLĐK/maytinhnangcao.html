@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 400px;
+            height: 500px;
+            border: 2px solid black;
+            text-align: center;
+        }
+
+        button {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+        <table>
+            <tr>
+                <td colspan="4"><input size="50" value="" type="text" id="display"></td>
+            </tr>
+            <tr>
+                <td><button onclick="getNumber('1')">1</button></td>
+                <td><button onclick="getNumber('2')">2</button></td>
+                <td><button onclick="getNumber('3')">3</button></td>
+                <td><button onclick="getNumber('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="getNumber('4')">4</button></td>
+                <td><button onclick="getNumber('5')">5</button></td>
+                <td><button onclick="getNumber('6')">6</button></td>
+                <td><button onclick="getNumber('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="getNumber('7')">7</button></td>
+                <td><button onclick="getNumber('8')">8</button></td>
+                <td><button onclick="getNumber('9')">9</button></td>
+                <td><button onclick="getNumber('x')">x</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="reset()">C</button></td>
+                <td><button onclick="getNumber('0')">0</button></td>
+                <td><button onclick="calculator()">=</button></td>
+                <td><button onclick="getNumber('/')">/</button></td>
+            </tr>
+        </table>
+    
+</body>
+<script>
+    let result = ""
+    function getNumber(num) {
+        document.getElementById("display").value += num
+        let check = result.split("")
+        let boo1 = check[check.length-1] == "-" || check[check.length-1] == "+" || check[check.length-1] == "/"
+        let boo2 = num == "-" || num == "+" || num == "/"
+        if (boo1 && boo2) {
+            check[check.length-1] = num
+            result = check.join("")
+            document.getElementById("display").value = result
+        } else {
+            if (num == "x") {
+            result += "*" 
+        } else {
+             result += num
+        }
+        }
+    }
+
+    function calculator() {
+        // document.getElementById("display").value = eval(document.getElementById("display").value)
+        document.getElementById("display").value = eval(result)
+        result = ""
+    }
+
+    function reset() {
+        document.getElementById("display").value = ""
+        result = ""
+    }
+</script>
+</html>
