@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BMI</h1>
+    Chiều cao: <input type="text" id="cc"><br>
+    Cân nặng: <input type="text" id="cn">
+    <h2 id="result"></h2>
+    <button onclick="calBMI()">Tính</button>
+</body>
+<script>
+    function calBMI() {
+        let cc = document.getElementById("cc").value
+        let cn = document.getElementById("cn").value
+        let bmi = cn / Math.pow(cc, 2)
+        if (bmi > 40) {
+            document.getElementById("result").innerHTML = "Béo phì độ III"
+        } else if (bmi >= 35) {
+            document.getElementById("result").innerHTML = "Béo phì độ II"
+        } else if (bmi >= 30) {
+            document.getElementById("result").innerHTML = "Béo phì độ I"
+        } else if (bmi >= 25) {
+            document.getElementById("result").innerHTML = "Thừa cân"
+        } else if (bmi >= 18.5) {
+            document.getElementById("result").innerHTML = "Bình thường"
+        } else if (bmi >= 17) {
+            document.getElementById("result").innerHTML = "Gầy độ I"
+        } else if (bmi >= 16) {
+            document.getElementById("result").innerHTML = "Gầy độ II"
+        } else {
+            document.getElementById("result").innerHTML = "Gầy độ III"
+        }
+    }
+</script>
+</html>

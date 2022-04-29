@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Amount</td>
+            <td>From</td>
+            <td>To</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="text" id="amount"></td>
+            <td><select id="from">
+                <option value="1">USD</option> //1
+                <option value="23000">VND</option> //23000
+                <option value="34">TL</option> //34
+                <option value="3">NB</option>  //3
+            </select></td>
+            <td><select id="to">
+                <option value="1">USD</option>
+                <option value="23000">VND</option>
+                <option value="34">TL</option>
+                <option value="3">NB</option>
+            </select></td>
+            <td><button onclick="convert2()">Convert</button></td>
+        </tr>
+        <tr>
+            <td colspan="4" id="result"></td>
+        </tr>
+    </table>
+</body>
+<script>
+    function convert() {
+        let from = document.getElementById("from").value
+        let to = document.getElementById("to").value
+        let amount = document.getElementById("amount").value
+        if (from == "usd" && to == "vnd") {
+            document.getElementById("result").innerHTML = "Result: " + (amount * 23000)
+        } else if (from == "vnd" && to == "usd") {
+            document.getElementById("result").innerHTML = "Result: " + (amount / 23000)
+        } else {
+            document.getElementById("result").innerHTML = "Result: " + amount
+        }
+    }
+
+    function convert2() {
+        let from = document.getElementById("from").value
+        let to = document.getElementById("to").value
+        let amount = document.getElementById("amount").value
+        document.getElementById("result").innerHTML = "Result: " + ((amount * to) / from).toFixed(3)
+    }
+</script>
+</html>

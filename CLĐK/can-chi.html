@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính năm âm lịch</h1>
+    <input type="text" id="year">
+    <h2 id="result"></h2>
+    <button onclick="calYear()">Tính</button>
+</body>
+<script>
+    function calYear() {
+        let nam_duong = document.getElementById("year").value
+        let nam_am = "Năm âm là: "
+        let can = nam_duong % 10
+        let chi = nam_duong % 12
+        switch(can) {
+            case 0: {
+                nam_am += "Canh "
+            }
+            break
+            case 1: {
+                nam_am += "Tân "
+            }
+            break
+            case 2: {
+                nam_am += "Nhâm "
+            }
+            break
+            case 3: {
+                nam_am += "Quý "
+            }
+            break
+            case 4: {
+                nam_am += "Giáp "
+            }
+            break
+            case 5: {
+                nam_am += "Ất "
+            }
+            break
+            case 6: {
+                nam_am += "Bính "
+            }
+            break
+            case 7: {
+                nam_am += "Đinh "
+            }
+            break
+            case 8: {
+                nam_am += "Mậu "
+            }
+            break
+            case 9: {
+                nam_am += "Kỷ "
+            }
+            break
+        }
+
+        switch(chi) {
+            case 0: {
+                nam_am += "Thân"
+            }
+            break
+            case 1: {
+                nam_am += "Dậu"
+            }
+            break
+            case 2: {
+                nam_am += "Tuất"
+            }
+            break
+            case 3: {
+                nam_am += "Hợi"
+            }
+            break
+            case 4: {
+                nam_am += "Tý"
+            }
+            break
+            case 5: {
+                nam_am += "Sửu"
+            }
+            break
+            case 6: {
+                nam_am += "Dần"
+            }
+            break
+            case 7: {
+                nam_am += "Mão"
+            }
+            break
+            case 8: {
+                nam_am += "Thìn"
+            }
+            break
+            case 9: {
+                nam_am += "Tị"
+            }
+            break
+            case 10: {
+                nam_am += "Ngọ"
+            }
+            break
+            case 11: {
+                nam_am += "Mùi"
+            }
+            break
+        }
+        document.getElementById("result").innerHTML = nam_am
+    }
+</script>
+</html>

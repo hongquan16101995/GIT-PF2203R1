@@ -56,11 +56,17 @@
     let result = ""
     function getNumber(num) {
         document.getElementById("display").value += num
+        // hàm split là hàm có sẵn của kiểu dữ liệu string
+        // tác dụng của split là cắt string thành 1 mảng các giá trị character theo yêu cầu cho trước
         let check = result.split("")
+        // ngoặc vuông là biểu thị cho khái niệm mảng trong JS
+        // ["giá trị số"]: chỉ định phần từ thức bao nhiêu của mảng để sử dụng
+        // tên mảng.length: trả về giá trị độ dài của mảng
         let boo1 = check[check.length-1] == "-" || check[check.length-1] == "+" || check[check.length-1] == "/"
         let boo2 = num == "-" || num == "+" || num == "/"
         if (boo1 && boo2) {
             check[check.length-1] = num
+            //hợp các phần tử của mảng thành chuỗi theo yêu cầu cho trước; ngược lại với split
             result = check.join("")
             document.getElementById("display").value = result
         } else {

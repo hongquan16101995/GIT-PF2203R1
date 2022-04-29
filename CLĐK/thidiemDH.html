@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính điểm Đại học khối D</h1>
+    Môn Toán: <input type="text" id="math"><br>
+    Môn Văn: <input type="text" id="lit"><br>
+    Môn Anh: <input type="text" id="eng"><br>
+    Khu vực: <select id="area">
+        <option value="0.75">KV1</option>
+        <option value="0.5">KV2-NT</option>
+        <option value="0.25">KV2</option>
+        <option value="0">KV3</option>
+    </select><br>
+    <button onclick="calPoint()">Tính điểm</button>
+    <h2 style="color: red;">Tổng điểm ĐH khối D của bạn là: <span id="result"></span></h2>
+</body>
+<script>
+    function calPoint() {
+        let math = parseFloat(document.getElementById("math").value)
+        let lit = parseFloat(document.getElementById("lit").value)
+        let eng = parseFloat(document.getElementById("eng").value)
+        let areaPoint = parseFloat(document.getElementById("area").value)
+        document.getElementById("result").innerHTML = (math + lit + eng + areaPoint)
+    }
+</script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tính ngày trong tháng</h1>
+    Month: <input type="text" id="month"><br>
+    Year: <input type="text" id="year"><br>
+    <h2 id="result"></h2>
+    <button onclick="calDay()">Tính ngày</button>
+</body>
+<script>
+    function calDay() {
+        let month = document.getElementById("month").value
+        switch(month) {
+            case "1":
+            case "3":
+            case "5":
+            case "7":
+            case "8":
+            case "10":
+            case "12": {
+                document.getElementById("result").innerHTML = "Tháng " + month + " có 31 ngày"
+            }
+            break
+            case "4":
+            case "6":
+            case "9":
+            case "11": {
+                document.getElementById("result").innerHTML = "Tháng " + month + " có 30 ngày"
+            }
+            break
+            case "2": {
+                //cách gọi hàm trong case; hàm sẽ thực thi 1 khối lệnh tương ứng
+                calYear()
+                //đây là cách viết trực tiếp khối lênh vào trong case
+                // let year = document.getElementById("year").value;
+                // if (year % 4 == 0 && year % 100 != 0) {
+                //     document.getElementById("result").innerHTML = "Tháng 2 có 29 ngày"
+                // } else if (year % 400 == 0) {
+                //     document.getElementById("result").innerHTML = "Tháng 2 có 29 ngày"
+                // } else {
+                //     document.getElementById("result").innerHTML = "Tháng 2 có 28 ngày"
+                // }
+            }
+            break
+            default: {
+                document.getElementById("result").innerHTML = "Đây không phải là tháng trong năm!!!"
+            }
+        }
+    }
+
+    function calYear() {
+        let year = document.getElementById("year").value;
+        if (year % 4 == 0 && year % 100 != 0) {
+            document.getElementById("result").innerHTML = "Tháng 2 có 29 ngày"
+        } else if (year % 400 == 0) {
+            document.getElementById("result").innerHTML = "Tháng 2 có 29 ngày"
+        } else {
+            document.getElementById("result").innerHTML = "Tháng 2 có 28 ngày"
+        }
+    }
+    console.log(parseInt(2004/100));
+</script>
+</html>
