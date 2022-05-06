@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 800px;
+            height: 300px;
+            border: 2px solid silver;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td {
+            border: 2px solid silver;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+<script>
+    let data = "<table>"
+    for(let i = 1; i <= 10; i++) {
+        data += "<tr>"
+        for(let j = 1; j <= 10; j++) {
+            data += "<td>" + i + " x " + j + " = " + j*i + "</td>"
+        }
+        data += "</tr>"
+    }
+    data += "</table>"
+    document.getElementById("result").innerHTML = data
+</script>
+</html>

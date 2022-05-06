@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo1"></div>
+    <div id="demo" style="text-align: right; width: 40px;"></div>
+</body>
+<script>
+    let data = ""
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+            data += "*"
+        }
+        data += "<br>"
+    }
+    data += "<br>"
+    for (let i = 5; i >= 1; i--) {
+        for (let j = 1; j <= i; j++) {
+            data += "*"
+        }
+        data += "<br>"
+    }
+    data += "<br>"
+    let data1 = ""
+    for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+            data1 += "*"
+        }
+        data1 += "<br>"
+    }
+    data1 += "<br>"
+    for (let i = 5; i >= 1; i--) {
+        for (let j = 1; j <= i; j++) {
+            data1 += "*"
+        }
+        data1 += "<br>"
+    }
+    data1 += "<br>"
+    document.getElementById("demo1").innerHTML = data
+    document.getElementById("demo").innerHTML = data1
+</script>
+
+</html>
