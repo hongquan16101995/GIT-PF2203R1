@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="count">
+    <p id="result"></p>
+    <p id="result1"></p>
+    <p id="result1"></p>
+    <button onclick="displayFibonacci(), calAdd(), find()">Display</button>
+</body>
+<script>
+    function displayFibonacci() {
+        let amount = +document.getElementById("count").value
+        let num1 = 0
+        let num2 = 1
+        //MUỐN DÃY CHẠY TỪ 0 THÌ ĐỂ: NUM1 = 1; NUM2 = 0
+        let count = 1
+        let result = "Dãy Fibonacci là: "
+        while(count <= amount) {
+            result += num2 + " "
+            let add = (num1 + num2)
+            num1 = num2
+            num2 = add
+            count++
+        }
+        document.getElementById("result").innerHTML = result
+    }
+
+    function calAdd() {
+        let amount = +document.getElementById("count").value
+        let num1 = 0
+        let num2 = 1
+        let count = 1
+        let result = 0
+        while(count <= amount) {
+            result += num2
+            let add = (num1 + num2)
+            num1 = num2
+            num2 = add
+            count++
+        }
+        document.getElementById("result1").innerHTML = "Tổng của " + amount + " số Fibonacci đầu tiên là: " + result
+    }
+
+    function find() {
+        let num1 = 0
+        let num2 = 1
+        let result
+        while(true) {
+            if (num2 % 5 == 0) {
+                result = num2
+                break
+            }
+            let add = (num1 + num2)
+            num1 = num2
+            num2 = add
+        }
+        document.getElementById("result2").innerHTML = "Số Fibonacci đầu tiên chia hết cho 5 là: " + result
+    }
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nhập 2 số bất kỳ (không bằng nhau):</p>
+    <input type="text" id="number1">
+    <input type="text" id="number2">
+    <p id="result"></p>
+    <button onclick="cal()">Calculator</button>
+</body>
+<script>
+    function cal() {
+        let number1 = +document.getElementById("number1").value
+        let number2 = +document.getElementById("number2").value
+        let result = 0
+        if (number1 == number2) {
+            // result += number1
+            result = "Không được phép nhập 2 số bằng nhau. Hãy nhập lại!!!"
+            document.getElementById("number1").value = ""
+            document.getElementById("number2").value = ""
+        } else if (number1 > number2) {
+            for(let i = number2; i <= number1; i++) {
+                result += i
+            }
+        } else {
+            for(let i = number1; i <= number2; i++) {
+                result += i
+            }
+        }
+        document.getElementById("result").innerHTML = result
+    }
+</script>
+</html>

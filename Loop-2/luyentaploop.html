@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //bài1
+    function bai1() {
+        for(let i = 1; i <= 100; i++) {
+            if (i == 99) {
+                document.write("Đã hoàn thành <br>") 
+                break 
+            }
+            document.write(i + "<br>")
+        }
+    }
+
+    //bài2
+    function bai2() {
+        let temp = +prompt("Nhập vào nhiệt độ bất kỳ")
+        do {
+            if (temp < 20) {
+                alert("Tăng nhiệt độ lên!")
+            } else if (temp > 100) {
+                alert("Giảm nhiệt độ xuống")
+            }  
+            temp = +prompt("Nhập vào nhiệt độ bất kỳ")
+        } while(temp < 20 || temp > 100)
+    }
+
+    // bài6
+    function bai6() {
+        // //1
+        // let sum = 0
+        // let count = 0
+        // let number = 7
+        // for(let i = 0;;i++) {
+        //     if (i % number == 0){
+        //         sum += i
+        //         count++
+        //     }
+        //     if (count == 30) {
+        //         break
+        //     }
+        // }
+        // document.write(sum)
+        
+        // //2
+        // let sum = 0
+        // for(let i = 0; i < 30; i++) {
+        //     sum += i*7
+        // }
+        // document.write(sum)
+
+        // //3
+        // let sum = 0
+        // let count = 0
+        // for (let i = 0; count < 30; count++) {
+        //     sum += i
+        //     i += 7
+        // }
+        // document.write(sum)
+    }
+
+    function bai7() {
+        let num = 1
+        let result = ""
+        while(num <= 100) {
+            if (num % 15 == 0) {
+                result += "FizzBuzz<br>"
+            } else if (num % 5 == 0) {
+                result += "Buzz<br>"
+            } else if (num % 3 == 0) {
+                result += "Fizz<br>"
+            } else {
+                result += (num + "<br>")
+            }
+            num++
+        }
+        document.write(result)
+    }
+    // bai1()
+    // bai2()
+    // bai6()
+    bai7()
+</script>
+</html>
