@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr = [4,5,6,7]
+    console.log(arr.length);
+    //thêm phần tử vào cuối mảng
+    console.log(arr.push(3))
+    //thêm phần tử vào đầu mảng
+    console.log(arr.unshift(8))
+    //xóa phần tử cuối mảng
+    console.log(arr.pop())
+    //xóa phần tử đầu mảng
+    console.log(arr.shift())
+    console.log(arr)
+    //nối 2 mảng thành 1 mảng
+    let arr1 = [9,10]
+    let arr2 = arr.concat(arr1)
+    console.log(arr2)
+    //nối các phần tử theo điều kiện: kết quả là string
+    console.log(arr2.join(" "))
+    //split: cắt chuối thành mảng các phần tử
+    let string = "abc"
+    let string1 = "Hello every body"
+    console.log(string1.split(" "))
+    //cắt bỏ phần tử của mảng cũ; trả về giá trị cắt
+    let arr3 = [2,3,4,5]
+    console.log(arr3.splice(2,1))
+    console.log(arr3)
+    //cắt lấy giá trị của mảng; không ảnh hưởng mảng cũ
+    let arr4 = [5,6,7,8]
+    console.log(arr4.slice(1,3))
+    console.log(arr4)
+    //lấy về vị trí của 1 giá trị trong mảng; trả về -1 nếu không có
+    let arr5 = [4,5,4,6,1,6]
+    console.log(arr5.indexOf(4))
+    //lấy về vị trí cuối cùng của phần tử nếu có; -1 nếu không tồn tại
+    console.log(arr5.lastIndexOf(6))
+
+    //hàm map
+    let ar = [1,2,3,4]
+    let ar1 = ar.map(function(value){
+        return value*3
+    })
+    console.log(ar1)
+</script>
+</html>

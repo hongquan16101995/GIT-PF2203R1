@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //thuật toán tìm kiếm tuyến tính
+    //thuật toán tìm kiếm nhị phân
+    let arr = [[1,2,10],[4,5,6,10],[7,8,9]]
+    for(let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++){
+            if (arr[i][j] == 10) {
+                 console.log(arr[i][j]);
+                 console.log(i + "+" + j)
+            }
+           
+        }
+    }
+
+    //thuật toán sắp xếp nổi bọt: đổi vị trí của 2 ptu liền kề nếu nó không đúng quy tắc
+    //thuật toán sắp xếp chọn
+    //thuật toán sắp xếp chèn
+    let array = [1,5,7,2,9,4,0,3,10,8] //1,2,4,5,7,9
+    console.log(array)
+    // for(let i = 0; i < array.length; i++) {
+    //     for (let j = 0; j < array.length-1; j++) {
+    //         if (array[j] > array[j+1]){
+    //             let swap = array[j]
+    //             array[j] = array[j+1]
+    //             array[j+1] = swap
+    //         }
+    //     }
+    // }
+    //hàm sort để sắp xếp mảng
+    array.sort((a,b) => {return a-b})
+    console.log(array)
+</script>
+</html>
