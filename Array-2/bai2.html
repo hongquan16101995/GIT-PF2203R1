@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Type anthing slowly</h2>
+    <textarea id="text" cols="30" rows="10" onkeydown="changeValue()"></textarea>
+</body>
+<script>
+    let string = "TÔI LÀ MỘT ĐỨA NGỐC!!!"
+    let arr = string.split("")
+     
+    function changeValue() {
+        let text = document.getElementById("text").value
+        let item = ""
+        if(text.length > 0) {
+            for (let i = 0; i < text.length; i++) {
+                item += arr[i]
+            }
+            document.getElementById("text").value = item
+            if (text.length === arr.length) {
+                document.getElementById("text").value = ""
+                item =""
+            }
+        } 
+       
+        // setTimeout(changeValue, 1000)
+    }
+</script>
+</html>

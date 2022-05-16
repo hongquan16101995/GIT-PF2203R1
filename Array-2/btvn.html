@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="bai1()">Click-bai1</button>
+    <button onclick="bai2()">Click-bai2</button>
+    <button onclick="bai3()">Click-bai3</button>
+    <button onclick="bai4()">Click-bai4</button>
+</body>
+<script>
+    //hàm trả về 1 mảng theo người dùng nhập
+    function getArray() {
+        let n = +prompt("Nhập vào số phần tử của mảng:")
+        let arr = new Array(n)
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = prompt("Nhập vào phần tử thứ " + (i+1) + ":")
+        }
+        console.log(arr)
+        //return: từ khóa định danh hàm có giá trị trả về
+        return arr
+    }
+
+    function bai1() {
+        let arr = getArray()
+        let count = 0
+        for(let value of arr) {
+            if (value % 2 === 0){
+                count += 1
+                console.log(value)
+            }    
+        }
+        console.log("Số lượng số chẵn là: " + count)
+    }
+
+    function bai2() {
+        let arr = getArray()
+        let count = 0
+        for(let value of arr) {
+            if (value === "a"){
+                count += 1
+            }    
+        }
+        console.log("Số lượng phần tử 'a' là: " + count)
+    }
+
+    //hàm có tham số: tham số là trong ngoặc tròn
+    //tham số được coi như biến sử dụng trong hàm mà không cần khởi tạo
+    function isPrime(number) {
+        if (number < 2) {
+            return false
+        } else {
+            //các điều kiện check SNT lần lượt: < number ; < number/2 ; <= căn bậc 2 của number (Math.sqrt(number))
+            for(let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false
+                }
+            }
+            return true
+        }
+    }
+
+    function bai3() {
+        let arr = getArray()
+        let sum = 0
+        for(let value of arr) {
+            //sử dụng hàm isPrime(); có giá trị trả về dạng true false để làm điều kiện kiểm tra
+            if (isPrime(value)){
+                sum += (+value)
+                console.log(value)
+            }    
+        }
+        console.log("Tổng giá trị các SNT là: " + sum)
+    }
+
+    function bai4() {
+        let number = 0
+        let sum = 0
+        while(number < 500) {
+            if (isPrime(number)) {
+                sum += number
+                console.log(number)
+            }
+            number++
+        }
+        console.log("Tổng giá trị các SNT < 500 là: " + sum)
+    }
+</script>
+</html>
