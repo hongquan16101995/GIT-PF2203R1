@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //ví dụ về hàm
+    function display() {
+        console.log("HelloWorld");
+    }
+    //gọi hàm
+    display()
+
+    //anonymous - arrow
+    let array = [1,5,3,2,8]
+    //anonymous
+    // array.sort(function (a,b) {
+    //     return a - b
+    // })
+    console.log(array)
+    //arrow
+    array.sort((a,b) => {
+        return a - b
+    })
+    console.log(array)
+
+    //các loại hàm thông dụng
+    //từ khóa return: dùng trong thân hàm, để hàm nhận về 1 giá trị nào đó
+    //hàm không tham số, không giá trị trả về: hàm logic
+    function sum1() {
+        let num1 = 10
+        let num2 = 20
+        let sum = num1 + num2
+        console.log("Kết quả sum1: " + sum)
+    }
+    sum1()
+    //hàm có tham số, không giá trị trả về
+    function sum2(num1, num2) {
+        let sum = num1 + num2
+        console.log("Kết quả sum2: " + sum)
+    }
+    sum2(10, 30)
+    //hàm không tham số, có giá trị trả về
+    function sum3() {
+        let num1 = 10
+        let num2 = 20
+        let sum = num1 + num2
+        return sum
+    }
+    let sumF3 = sum3()
+    console.log("Kết quả sum3: " + sumF3)
+    //hàm có tham số, có giá trị trả về
+    //num1 và num2 được gọi là tham số (tham số hình thức)
+    function sum4(num1, num2) {
+        let sum = num1 + num2
+        return sum
+    }
+    //10 và 20 được gọi là đối số (tham số thực)
+    //khi gọi hàm truyền giá trị nào thì đấy là đối số
+    let sumF4 = sum4(10,20)
+    console.log("Kết quả sum4: " + sumF4)
+
+    //đệ quy: vd đặc trưng với tính giai thừa
+    //yc: tính giai thừa của 1 số nguyên dương bất kỳ
+    let number = 7
+    //thông thường
+    let gt1 = 1;
+    for (let i = 1; i <= number; i++) {
+        gt1 *= i
+    }
+    console.log(gt1)
+    //đệ quy
+    function giaiThua(num) {
+        if (num === 2) {
+            return 2;
+        } else {
+            return num * giaiThua(num - 1)
+        }
+    }
+    let gt2 = giaiThua(7)
+    console.log(gt2)
+
+</script>
+</html>

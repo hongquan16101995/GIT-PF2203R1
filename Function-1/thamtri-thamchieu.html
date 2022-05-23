@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    //shadow: khái niệm bóng trong lập trình
+    //ví dụ về tham trị: giá trị của 2 biến a,b không đổi do hàm swap không truy cập được tới 2 biến
+    let a = 5
+    let b = 10
+    function swap(a, b) {
+        let temp = a
+        a = b
+        b = temp
+        console.log("a = " + a + "; b = " + b);
+    }
+    swap(a, b)
+    console.log("a = " + a + "; b = " + b);
+
+    //ví dụ về tham chiếu: arr là 1 đối tượng của lớp Array
+    //hàm được cung cấp đường dẫn trỏ đến array, có thế thay đổi arr thông qua đường dẫn đó
+    let arr = [5,10]
+    console.log(arr)
+    function swap2(arr) {
+        let temp = arr[0]
+        arr[0] = arr[1]
+        arr[1] = temp
+    }
+    swap2(arr)
+    console.log(arr)
+</script>
+</html>
