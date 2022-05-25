@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function giaiThua(number) {
+        let giaiThua = 1
+        if (number === 0) {
+            return giaiThua
+        }
+        for (let i = 2; i <= number; i++) {
+            giaiThua *= i
+        }
+        return giaiThua
+    }
+
+    // console.log(giaiThua(+prompt("Nhập 1 số bất kỳ:")));
+
+    function giaiThua1(number) {
+        if (number === 2) {
+            return 2
+        }
+        return number * giaiThua1(number -1)
+    }
+
+    // console.log(giaiThua1(+prompt("Nhập 1 số bất kỳ:")));
+
+    //ký tự: chuỗi có 1 chữ cái hoặc 1 số
+    let number = prompt("Nhập 1 ký tự bất kỳ: ")
+    //isNaN: is not a number; trả về true nếu là ký tự chuỗi; trả về false nếu là ký tự số
+    // ! là toán tử logic phủ định
+    console.log(!isNaN(number))
+</script>
+</html>
