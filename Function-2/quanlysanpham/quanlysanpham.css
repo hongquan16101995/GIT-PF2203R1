@@ -1,0 +1,20 @@
+body {
+    margin-left: 20px;
+}
+
+button, #add {
+    background-color: rgb(7, 201, 7);
+    border-radius: 5px;
+    height: 40px;
+    width: 80px;
+    border: 1px solid white;
+    color: white;
+}
+
+table {
+    width: 600px;
+}
+
+#red {
+    color: red;
+}

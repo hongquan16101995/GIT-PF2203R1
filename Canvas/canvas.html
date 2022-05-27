@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- canvas là 1 thẻ của html. dùng để vẽ lại các hình theo ý muốn -->
+    <canvas id="canvas" width="600px" height="300px" style="border: 1px solid;"></canvas>
+</body>
+<script>
+    let ctx = document.getElementById("canvas").getContext("2d")
+
+    //vẽ đường kẻ trên canvas
+    //điểm bắt đầu vẽ đường kẻ: 2 tham số theo trục x và trục y
+    ctx.moveTo(10, 10)
+    //điểm kết thúc vẽ đường kẻ
+    ctx.lineTo(100, 10)
+    //tạo đường kẻ
+    ctx.stroke()
+
+
+    //vẽ hình chữ nhật
+    //tạo hình chữ nhật: tham số 1 là vị trí x của điểm trên bên trái, tham số 2 là vị trí y của điểm trên bên trái,
+    //tham số 3 là chỉ số chiều rộng (phương ngang), tham số 4 là chỉ số chiều dài (phương dọc)
+    ctx.strokeRect(50, 50, 100, 40)
+    ctx.fillRect(160, 50, 100, 40)
+    //đổ đầy hình vẽ trong canvas
+    //ctx.fill()
+    //tạo viền hình vẽ trong canvas
+    // ctx.stroke()
+
+    //vẽ hình tròn
+    //bắt đầu vẽ
+    ctx.beginPath()
+    //tô màu cho hình vẽ sau đó
+    ctx.fillStyle = "red"
+    //tham số 1,2 là vị trí x,y của tâm hình tròn; tham số 3 là bán kính, tham số 4,5 là mặc định dùng để quay vẽ hình tròn
+    ctx.arc(200, 200, 60, 0, Math.PI*2)
+    ctx.fill()
+    // ctx.stroke()
+    //kế thúc vẽ
+    ctx.closePath()
+
+    //clear thành phần canvas hình chữ nhật có chỉ số tương ứng
+    // ctx.clearRect(0,0,800,500)
+</script>
+</html>
