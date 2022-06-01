@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //ES6: có thêm từ khóa để tạo class trong Js
+    //từ khóa class: đánh dấu đây là 1 class được khởi tạo trong Js
+    class Apple {
+        //các thuộc tính trong class Apple
+        weight
+        color
+
+        //hàm hoặc phương thức khởi tạo đối tượng của class Apple
+        //từ khóa constructor: đánh dấu phương thức khởi tạo
+        constructor(weight, color) {
+            this.weight = weight
+            this.color = color
+        }
+
+        //các phương thức trong class Apple
+        getColor() {
+            return this.color
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        setColor(color) {
+            this.color = color
+        }
+    }
+
+    //khởi tạo đối tượng thuộc lớp Apple
+    let apple1 = new Apple(10, "blue")
+    let apple2 = new Apple(20, "yellow")
+    console.log(apple1.getColor());
+    console.log(apple1.getWeight());
+    console.log(apple2.getColor());
+    console.log(apple2.getWeight());
+    apple2.setColor("pink")
+    console.log(apple2.color);
+    console.log(apple2.weight);
+</script>
+</html>

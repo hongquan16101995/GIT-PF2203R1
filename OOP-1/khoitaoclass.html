@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //ES5: sẽ không có class, khởi tạo lớp với function
+    //cú pháp khai báo lớp trong ES5 sử dụng function
+    //1 class được khởi tạo: tên là Apple
+    function Apple(weight, color) {
+        //các thuộc tính của Apple
+        this.weight = weight
+        this.color = color
+
+        //1 phương thức của class Apple
+        this.getColor = function() {
+            return this.color
+        }
+
+        this.getWeight = function() {
+            return this.weight
+        }
+    }
+
+    //khởi tạo đối tượng thuộc lớp Apple
+    let apple1 = new Apple(10, "blue")
+    let apple2 = new Apple(20, "yellow")
+    console.log(apple1.getColor());
+    console.log(apple1.getWeight());
+    console.log(apple2.getColor());
+    console.log(apple2.getWeight());
+
+    //khởi tạo đối tượng với các tạo Object Literal
+    let apple = {
+        weight: 10, 
+        color: "green", 
+        getColor() {
+            return this.color
+        }
+    }
+
+    console.log(apple.getColor())
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="300" style="border: 1px solid;"></canvas>
+</body>
+<script>
+    class Circle {
+        x
+        y
+        radius
+
+        constructor(x, y, radius) {
+            this.x = x
+            this.y = y
+            this.radius = radius
+        }
+
+        getRandomHex(){
+            return Math.floor(Math.random()*255);
+        }
+
+        getRandomColor() {
+            let red = this.getRandomHex();
+            let green = this.getRandomHex();
+            let blue = this.getRandomHex();
+	        return "rgb(" + red + "," + blue + "," + green +")";
+        }
+
+        createCircle1() {
+            let ctx = document.getElementById("canvas").getContext("2d");
+            ctx.beginPath();
+            //từ khóa this: trỏ đến lớp/đối tượng đang được chỉ định
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            let color = this.getRandomColor();
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+        createCircle2() {
+            let ctx = document.getElementById("canvas").getContext("2d");
+            let radius = Math.floor(Math.random() * 80);
+            let color = this.getRandomColor();
+            let x = Math.random() * 600;
+            let y = Math.random() * 300;
+            let circle= new Circle(x, y, radius);
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+    }
+
+    let circle1 = new Circle(100, 100, 50)
+    // circle1.createCircle1()
+
+    function multiCircle1() {
+        for (let i = 0; i < 10; i++) {
+            circle1.createCircle2()
+        }
+    }
+    // multiCircle1()
+
+    function multiCircle2() {
+        for (let i = 0; i < 10; i++) {
+            //Math.random(): trả về trị số trong khoảng từ 0 => 1
+            let circle = new Circle(Math.random() * 600, Math.random() * 300, Math.floor(Math.random() * 80))
+            circle.createCircle1()
+        }
+    }
+    multiCircle2()
+
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Animal {
+        name
+        weight
+        height
+        color
+
+        constructor(name, weight, height, color) {
+            this.name = name
+            this.weight = weight
+            this.height = height
+            this.color = color
+        }
+
+        getName() {
+            return this.name
+        }    
+
+        getColor() {
+            return this.color
+        }
+
+        checkNameOfAnimal() {
+            if (this.name === "Chim") {
+                return 0
+            } else if (this.name === "Mèo") {
+                return 1
+            } else if (this.name === "Cá") {
+                return 2
+            }
+        }
+
+        move() {
+            if (this.checkNameOfAnimal() === 0) {
+                return "Biết bay"
+            } else if (this.checkNameOfAnimal() === 1) {
+                return "Biết trèo cây"
+            } else if (this.checkNameOfAnimal() === 2) {
+                return "Biết bơi"
+            }
+        }
+    }
+
+    let animal1 = new Animal("Chim", 800, 20, "đỏ")
+    let animal2 = new Animal("Mèo", 2000, 25, "xám")
+    let animal3 = new Animal("Cá", 1000, 8, "bạc")
+    console.log(animal1.move());
+    console.log(animal2.move());
+    console.log(animal3.move());
+    console.log(animal1.getColor());
+    console.log(animal3.getColor());
+    console.log(animal2.color);
+    console.log(animal1.checkNameOfAnimal());
+</script>
+</html>
