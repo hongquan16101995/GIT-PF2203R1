@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    class Student {
+        name
+        age
+        gender
+        pointMath
+        pointPhysic
+        pointChe
+
+        constructor(name, age, gender) {
+            this.name = name
+            this.age = age
+            this.gender = gender
+        }
+
+        setPointMath(point) {
+            this.pointMath = point
+        }
+
+        setPointPhysic(point) {
+            this.pointPhysic = point
+        }
+
+        setPointChe(point) {
+            this.pointChe = point
+        }
+
+        getAveragePoint() {
+            return (this.pointMath + this.pointPhysic + this.pointChe) / 3
+        }
+
+        setName(name) {
+            this.name = name
+        }
+    }
+
+    let student = new Student("Tú", 25, "Male")
+    console.log(student);
+    student.setPointMath(7)
+    student.setPointPhysic(6)
+    student.setPointChe(8.5)
+    console.log(student.getAveragePoint())
+    student.setName("Nam")
+    console.log(student);
+
+    //gọi phương thức: phương thức trong OOP tương đương hàm trong Js
+    //gọi phương thức là gọi đến tên của phương thức, thông qua đối tượng chứa phương thức
+    student.getAveragePoint()
+
+    //truyền tham số vào phương thức tương tự truyền tham số vào hàm
+    student.setName("Quân")
+</script>
+</html>

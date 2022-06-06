@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //khởi tạo lớp Apple
+    class Apple {
+        weight;
+
+        constructor(weight) {
+            this.weight = weight
+        }
+
+        //phương thức để giảm khối lượng quả táo (khi bị ăn)
+        decrease() {
+            this.weight = this.weight - 1
+        }
+
+        //phương thức kiểm tra xem quả táo đã bị ăn hết chưa (hết khi weight = 0)
+        isEmpty() {
+            if (this.weight === 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        //phương thức trả về cân nặng quả táo tại thời điểm hiện tại
+        getWeight() {
+            return this.weight
+        }
+    }
+
+    //khởi tạo đối tượng Apple với cân nặng tương ứng
+    let apple = new Apple(10)
+    let apple1 = new Apple(20)
+</script>
+</html>
