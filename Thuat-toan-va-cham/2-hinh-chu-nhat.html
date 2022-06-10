@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="300" id="canvas" style="border: 1px solid;"></canvas>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+</body>
+<script>
+    class Rectangle {
+        x
+        y
+        width
+        height
+        color
+
+        constructor(x, y, width, height, color) {
+            this.x = x
+            this.y = y
+            this.width = width
+            this.height = height
+            this.color = color
+        }
+
+        isCheckCollision(rectangle) {
+            let distX = (this.x + (this.width/2)) - (rectangle.x + (rectangle.width/2))
+            //200+(100/2) - 250+(100/2) = -50
+            distX = Math.abs(distX) //50
+
+            const distW = (this.width + rectangle.width)/2 //(100+100)/2 = 100
+
+            let distY = (this.y + (this.height/2)) - (rectangle.y + (rectangle.height/2))
+            distY = Math.abs(distY)
+
+            const distH = (this.height + rectangle.height)/2
+
+            return (distX <= distW && distY <= distH)
+        }
+
+        drawRect() {
+            let ctx = document.getElementById("canvas").getContext("2d")
+            ctx.fillStyle = this.color
+            ctx.fillRect(this.x, this.y, this.width, this.height)
+        }
+    }
+
+    //tạo 2 đối tượng Rectangle để vẽ và check va chạm
+    let rectangle1 = new Rectangle(200, 10, 80, 50, "red")
+    let rectangle2 = new Rectangle(250, 210, 120, 50, "blue")
+
+    //lấy thẻ canvas về để vẽ
+    let ctx = document.getElementById("canvas").getContext("2d")
+    //biến chứa hàm gọi lại setInterval
+    let interval
+
+    //phương thức làm thay đổi chỉ số của trị số Y theo từng lần gọi
+    function speed(rectangle){
+        rectangle.y += 5
+    }
+
+    //phương thức để di chuyển rectangle2 sang trái
+    function moveLeft(rectangle) {
+        rectangle.x -= 10
+    }
+
+    //phương thức để di chuyển rectangle2 sang phải
+    function moveRight(rectangle) {
+        rectangle.x += 10
+    }
+
+    //phương thức để gọi 2 hàm di chuyển của rectangle2
+    function moveSelection(evt) {
+        switch(evt.keyCode) {
+            case 37:
+                moveLeft(rectangle2);
+                break;
+            case 39:
+                moveRight(rectangle2);
+                break;
+        }
+    }
+
+    //tạo hàm lắng nghe sự kiện keydown cho window
+    window.addEventListener("keydown", moveSelection)
+
+    //phương thức để hình rectangle1 có thể di chuyển
+    function move() {
+        ctx.clearRect(0, 0, 600, 300)
+        console.log(rectangle1.isCheckCollision(rectangle2))
+        //điều kiện để trị số Y của rectangle1 setup lại như ban đầu
+        if (rectangle1.y === 230) {
+            rectangle1.y = 10
+        }
+        //điều kiện để dừng nếu có va chạm
+        if (rectangle1.isCheckCollision(rectangle2)) {
+            stop()
+            alert("Thua rồi!!")
+        }
+        //gọi hàm làm tăng trị số Y của rectangle1
+        speed(rectangle1)
+        rectangle1.drawRect()
+        rectangle2.drawRect()
+    }
+
+    //phương thức khởi tạo hàm gọi lại setInterval
+    function start() {
+        interval = setInterval(move, 100)
+    }
+
+    //phương thức để hủy setup setInterval
+    function stop() {
+        clearInterval(interval)
+    }
+</script>
+</html>
